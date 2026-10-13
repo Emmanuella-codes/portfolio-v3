@@ -81,8 +81,8 @@ export default function HeroSection() {
           }}
         >
           Full-stack engineer shipping{" "}
-          <strong style={{ fontWeight: 700 }}>interfaces people enjoy</strong> on top of{" "}
-          <strong style={{ fontWeight: 700 }}>systems that hold up in production</strong>.
+          <strong style={{ fontWeight: 700 }}>interfaces people use</strong> to the APIs{" "}
+          <strong style={{ fontWeight: 700 }}>databases and backend logic</strong> behind them.
         </p>
 
         <div

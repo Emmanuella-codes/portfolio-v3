@@ -55,7 +55,7 @@ export default function AboutSection() {
             Today I work across the whole path — the{" "}
             <em style={{ ...serif, fontStyle: "italic", fontSize: 21 }}>interface</em>, the{" "}
             <em style={{ ...serif, fontStyle: "italic", fontSize: 21 }}>service</em> and the{" "}
-            <em style={{ ...serif, fontStyle: "italic", fontSize: 21 }}>store</em> — and I
+            <em style={{ ...serif, fontStyle: "italic", fontSize: 21 }}>store</em> and I
             treat each one as part of the same design.
           </p>
         </div>
