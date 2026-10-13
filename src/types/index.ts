@@ -5,6 +5,7 @@ export interface Project {
   summary: string
   stack: string[]
   shot: string
+  video?: string
   liveUrl: string
   codeUrl: string
 }

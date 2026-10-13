@@ -5,21 +5,23 @@ export const projects: Project[] = [
     name: "Kinsittr",
     year: "2026",
     tone: "oklch(0.78 0.1 50)",
-    summary: "Connecting parents to professional childcare providers.",
+    summary: "Childcare marketplace connecting parents with professional caregivers.",
     stack: ["Next.js", "Go", "Postgres"],
     shot: "Kinsittr screenshot",
-    liveUrl: "#",
+    video: "/assets/kinsittr.mp4",
+    liveUrl: "https://kinsittr.vercel.app/",
     codeUrl: "#",
   },
   {
     name: "Olu",
     year: "2026",
     tone: "oklch(0.82 0.07 155)",
-    summary: "SMS and Web voting platform for elections.",
+    summary: "A digital voting platform built for accessible elections.",
     stack: ["Next.js", "Go", "Postgres"],
     shot: "olu screenshot",
+    video: "/assets/olu.mp4",
     liveUrl: "#",
-    codeUrl: "#",
+    codeUrl: "https://github.com/Emmanuella-codes/olu",
   },
   {
     name: "Sceneshare",
@@ -28,8 +30,9 @@ export const projects: Project[] = [
     summary: "Share specifc timestamps from a video with your friends.",
     stack: ["Next.js", "WXT", "Go", "Postgres"],
     shot: "sceneshare screenshot",
+    video: "/assets/sceneshare.mp4",
     liveUrl: "#",
-    codeUrl: "#",
+    codeUrl: "https://github.com/Emmanuella-codes/sceneshare",
   },
   {
     name: "Burnished",
@@ -38,8 +41,9 @@ export const projects: Project[] = [
     summary: "Optimize your CV and generate cover letter for a specific role or get roasted based on your CV.",
     stack: ["Nest.js", "Go", "Postgres"],
     shot: "burnished screenshot",
-    liveUrl: "#",
-    codeUrl: "#",
+    video: "/assets/burnished.mp4",
+    liveUrl: "https://burnished.netlify.app/",
+    codeUrl: "https://github.com/Emmanuella-codes/burnished",
   },
   {
     name: "Nox",
@@ -59,7 +63,9 @@ export const roles: Role[] = [
     title: "Founding Engineer",
     // period: "2025 — present",
     points: [
-      "lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "Built the backend and database structure supporting parents, caregivers, bookings, and platform administration.",
+      "Implemented role-based access, booking workflows, messaging, and notifications.",
+      "Integrated Stripe payments and payouts with reconciliation logic and audit-logged moderation workflows.",
     ],
   },
   {
@@ -67,8 +73,9 @@ export const roles: Role[] = [
     title: "Backend Engineer",
     // period: "2026",
     points: [
-      "Built interactive data tools for climate research clients with React, D3 and WebGL.",
-      "Set up accessibility audits and brought core flows to WCAG 2.2 AA.",
+      "Built stateful order flows covering customer details, delivery selection, and checkout.",
+      "Implemented Paystack webhook processing and scheduled jobs to reconcile payment states and handle abandoned checkouts.",
+      "Developed step-based merchant onboarding with WhatsApp Business and Meta catalogue integration.",
     ],
   },
   {
@@ -76,8 +83,8 @@ export const roles: Role[] = [
     title: "Frontend Engineer",
     // period: "2019 — 2021",
     points: [
-      "Designed the event pipeline that tracks 1M+ parcels a day across Kafka and Go services.",
-      "Wrote the public REST API and its docs, used by 200+ merchant integrations.",
+      "Developed dashboard and job discovery features using Next.js and TypeScript.",
+      "Translated Figma designs into a reusable Tailwind CSS component library.",
     ],
   },
   {
@@ -85,7 +92,9 @@ export const roles: Role[] = [
     title: "Fullstack Developer",
     // period: "2018 — 2019",
     points: [
-      "Shipped marketing sites and small web apps for local businesses, from design to deploy.",
+      "Built Go services supporting trivia scoring and scheduled content delivery.",
+      "Refactored MySQL queries and indexes to address inefficient data retrieval.",
+      "Added automated tests and Docker-based environments to support repeatable builds and deployments.",
     ],
   },
   {
@@ -93,7 +102,9 @@ export const roles: Role[] = [
     title: "Fullstack Developer",
     // period: "2018 — 2019",
     points: [
-      "Shipped marketing sites and small web apps for local businesses, from design to deploy.",
+      "Developed backend services supporting bookings, payment processing, and campaign workflows.",
+      "Implemented Redis caching and database query optimizations to improve API responsiveness.",
+      "Built React interfaces and integrated Paystack and Flutterwave payment flows.",
     ],
   },
 ]

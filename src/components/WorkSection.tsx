@@ -1,9 +1,84 @@
 "use client"
 
+import { useEffect, useRef } from "react"
 import { useNarrow } from "@/src/utils/useNarrow"
 import { projects } from "@/src/data/portfolio"
 
 const mono = { fontFamily: "var(--font-mono), monospace" } as const
+
+function ProjectMedia({ video, shot }: { video?: string; shot: string }) {
+  const videoRef = useRef<HTMLVideoElement>(null)
+
+  useEffect(() => {
+    const media = videoRef.current
+    if (!media) return
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          void media.play().catch(() => {})
+        } else {
+          media.pause()
+        }
+      },
+      { threshold: 0.25 },
+    )
+
+    observer.observe(media)
+
+    return () => {
+      observer.disconnect()
+      media.pause()
+    }
+  }, [])
+
+  return (
+    <div
+      style={{
+        flex: "0 0 45%",
+        border: "2px dashed rgba(35,26,20,0.35)",
+        borderRadius: 18,
+        background: "rgba(255,255,255,0.3)",
+        overflow: "hidden",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        minHeight: 180,
+      }}
+    >
+      {video ? (
+        <video
+          ref={videoRef}
+          src={video}
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          aria-label={shot}
+          style={{
+            display: "block",
+            width: "100%",
+            height: "100%",
+            minHeight: 180,
+            objectFit: "cover",
+          }}
+        />
+      ) : (
+        <span
+          style={{
+            padding: 16,
+            textAlign: "center",
+            ...mono,
+            fontSize: 13,
+            color: "#231a14",
+          }}
+        >
+          [ {shot} ]
+        </span>
+      )}
+    </div>
+  )
+}
 
 export default function WorkSection() {
   const { ref, narrow } = useNarrow<HTMLDivElement>()
@@ -113,47 +188,13 @@ export default function WorkSection() {
               </div>
 
               {!narrow && (
-                <div
-                  style={{
-                    flex: "0 0 45%",
-                    border: "2px dashed rgba(35,26,20,0.35)",
-                    borderRadius: 18,
-                    background: "rgba(255,255,255,0.3)",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    padding: 16,
-                    textAlign: "center",
-                    ...mono,
-                    fontSize: 13,
-                    color: "#231a14",
-                    minHeight: 180,
-                  }}
-                >
-                  [ {p.shot} ]
-                </div>
+                <ProjectMedia video={p.video} shot={p.shot} />
               )}
             </div>
 
             {narrow && (
-              <div
-                style={{
-                  marginTop: 28,
-                  height: 180,
-                  border: "2px dashed rgba(35,26,20,0.35)",
-                  borderRadius: 18,
-                  background: "rgba(255,255,255,0.3)",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  padding: 16,
-                  textAlign: "center",
-                  ...mono,
-                  fontSize: 13,
-                  color: "#231a14",
-                }}
-              >
-                [ {p.shot} ]
+              <div style={{ marginTop: 28, height: 180 }}>
+                <ProjectMedia video={p.video} shot={p.shot} />
               </div>
             )}
           </article>

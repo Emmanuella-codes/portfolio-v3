@@ -1,4 +1,5 @@
 const mono = { fontFamily: "var(--font-mono), monospace" } as const
+const currentYear = new Date().getFullYear()
 
 export default function Footer() {
   return (
@@ -17,17 +18,17 @@ export default function Footer() {
       }}
     >
       <div style={{ display: "flex", gap: 20, flexWrap: "wrap" }}>
-        <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+        <a href="https://github.com/Emmanuella-codes" target="_blank" rel="noopener noreferrer">
           github
         </a>
-        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+        <a href="https://www.linkedin.com/in/emmanuella-chukwu-fullstack-developer/" target="_blank" rel="noopener noreferrer">
           linkedin
         </a>
-        <a href="https://read.cv" target="_blank" rel="noopener noreferrer">
+        <a href="https://flowcv.com/resume/bksvh2m0om54" target="_blank" rel="noopener noreferrer">
           read.cv
         </a>
       </div>
-      <span>designed &amp; built by Emmanuella · 2026</span>
+      <span>designed &amp; built by Emmanuella · {currentYear}</span>
     </footer>
   )
 }
