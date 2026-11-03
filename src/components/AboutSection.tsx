@@ -85,7 +85,6 @@ export default function AboutSection() {
               <li>React &amp; TypeScript</li>
               <li>Design systems</li>
               <li>Accessibility</li>
-              <li>Motion &amp; interaction</li>
             </ul>
           </div>
           <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
@@ -106,7 +105,6 @@ export default function AboutSection() {
               <li>Go &amp; Node</li>
               <li>Postgres &amp; data modelling</li>
               <li>API design</li>
-              <li>Queues &amp; infra</li>
             </ul>
           </div>
         </div>
